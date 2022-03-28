@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/botton_border"
+    android:backgroundTint="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="7dp"
+    android:orientation="vertical"
+    tools:context=".ui.AddContactFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/newContact_fragment_Header"
+            style="@style/myTxtStyle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_marginStart="118dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="252dp"
+            android:layout_marginBottom="19dp"
+            android:padding="10dp"
+            android:text="@string/contact_card"
+            app:layout_constraintBottom_toTopOf="@+id/newContact_fragment_NameContainer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/newContact_fragment_NameContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newContact_fragment_Header">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newContact_fragment_tvName"
+                android:layout_width="match_parent"
+                style="@style/myTxtStyle2"
+                android:layout_height="wrap_content"
+                android:hint="@string/name_hint"
+                android:padding="10dp"
+                android:background="@drawable/botton_border" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/newContact_fragment_PhoneContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newContact_fragment_NameContainer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/newContact_fragment_tvPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_hint"
+                style="@style/myTxtStyle2"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:background="@drawable/botton_border" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/newContact_fragment_AddBtn"
+            style="@style/loginButton"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="239dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/botton_border2"
+            android:padding="10dp"
+            android:text="@string/save_contact"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/newContact_fragment_PhoneContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

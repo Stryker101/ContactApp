@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/implementation1/src/main/res/drawable/botton_border.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/botton_border2.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_call_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_contact_phone_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_person_outline_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/ic_baseline_share_24.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/drawable/notify_back.xml" value="0.1815" />
+        <entry key="app/implementation1/src/main/res/layout/activity_main.xml" value="0.3098958333333333" />
+        <entry key="app/implementation1/src/main/res/layout/contact_caller_fragement.xml" value="0.1" />
+        <entry key="app/implementation1/src/main/res/layout/contact_item_layout.xml" value="0.3098958333333333" />
+        <entry key="app/implementation1/src/main/res/layout/fragment_blank.xml" value="0.1" />
+        <entry key="app/implementation1/src/main/res/layout/fragment_contact_card.xml" value="0.2953125" />
+        <entry key="app/implementation1/src/main/res/layout/fragment_contact_list.xml" value="0.3098958333333333" />
+        <entry key="app/implementation1/src/main/res/layout/fragment_new_contact.xml" value="0.2953125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/botton_border"
+    android:backgroundTint="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".ui.AddContactFragment">
+
+    <RelativeLayout
+        android:id="@+id/contactCaller_fragment_top_layout"
+        android:layout_width="match_parent"
+        android:padding="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/top_layout_frameLayout1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/notify_back">
+            <ImageView
+                android:id="@+id/contactCaller_fragment_ivBack"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_arrow_back_ios_new_24"/>
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/top_layout_frameLayout2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/notify_back">
+            <ImageView
+                android:id="@+id/contactCaller_fragment_ivEdit"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_edit_24" />
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView style="@style/myCardView">
+
+        <LinearLayout style="@style/myLinearLayout">
+
+            <ImageView
+                android:id="@+id/contactCaller_fragment_ivImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_baseline_person_24" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/contactCaller_fragment_tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/profile_name"
+        android:textColor="@color/white"
+        style="@style/myTxtStyle3"/>
+
+    <TextView
+        android:id="@+id/contactCaller_fragment_tvPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/phone_no"
+        android:textColor="@color/white"
+        style="@style/myTxtStyle2"/>
+
+    <TextView
+        android:id="@+id/contactCaller_fragment_tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/email"
+        android:textColor="@color/white"
+        style="@style/myTxtStyle2"/>
+
+    <RelativeLayout
+        android:id="@+id/contactCaller_fragment_bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/bottom_layout_frameLayout1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/notify_back">
+            <ImageView
+                android:id="@+id/contactCaller_fragment_ivCall"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_call_24"/>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/bottom_layout_frameLayout2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/notify_back">
+            <ImageView
+                android:id="@+id/contactCaller_fragment_ivShare"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_share_24"/>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/bottom_layout_frameLayout3"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/notify_back">
+            <ImageView
+                android:id="@+id/contactCaller_fragment_ivDelete"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_baseline_delete_24" />
+        </FrameLayout>
+    </RelativeLayout>
+</LinearLayout>
