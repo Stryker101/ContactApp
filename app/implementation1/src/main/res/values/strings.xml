@@ -11,6 +11,9 @@
     <string name="contact_added">Contact Saved</string>
     <string name="error">%1$s</string>
     <string name="email" />
+    <string name="email_hint">Email</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="update_contact">Update Contact</string>
 
 
 </resources>

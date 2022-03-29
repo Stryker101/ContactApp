@@ -6,15 +6,48 @@
     app:startDestination="@id/contactList">
     <fragment
         android:id="@+id/contactList"
-        android:name="com.example.implementation1.ui.ContactListFragment"
+        android:name="com.example.implementation1.Fragments.ContactListFragment"
         android:label="fragment_contact_list"
         tools:layout="@layout/fragment_contact_list" >
         <action
-            android:id="@+id/action_contactList_to_contactCardFragment"
-            app:destination="@id/contactCardFragment" />
+            android:id="@+id/action_contactList_to_addContactFragment"
+            app:destination="@id/addContactFragment" />
+        <action
+            android:id="@+id/action_contactList_to_contactCallerFragment"
+            app:destination="@id/contactCallerFragment" />
     </fragment>
-    <dialog
-        android:id="@+id/contactCardFragment"
-        android:name="com.example.implementation1.ui.ContactCardFragment"
-        android:label="ContactCardFragment" />
+    <fragment
+        android:id="@+id/addContactFragment"
+        android:name="com.example.implementation1.Fragments.AddContactFragment"
+        android:label="fragment_add_contact"
+        tools:layout="@layout/fragment_new_contact">
+        <action
+            android:id="@+id/action_addContactFragment_to_contactList"
+            app:destination="@id/contactList" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactCallerFragment"
+        android:name="com.example.implementation1.Fragments.ContactCallerFragment"
+        android:label="ContactCallerFragment" >
+        <action
+            android:id="@+id/action_contactCallerFragment_to_editContactFragment"
+            app:destination="@id/editContactFragment" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.implementation1.data.Contact" />
+        <action
+            android:id="@+id/action_contactCallerFragment_to_contactList"
+            app:destination="@id/contactList" />
+    </fragment>
+    <fragment
+        android:id="@+id/editContactFragment"
+        android:name="com.example.implementation1.Fragments.EditContactFragment"
+        android:label="EditContactFragment" >
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.implementation1.data.Contact" />
+        <action
+            android:id="@+id/action_editContactFragment_to_contactList"
+            app:destination="@id/contactList" />
+    </fragment>
 </navigation>

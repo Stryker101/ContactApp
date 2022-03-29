@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "Week6Task"
 include ':app'
 include ':app:implementation1'
+include ':app:implementation2'

@@ -1,6 +1,7 @@
-package com.example.implementation1.ui
+package com.example.implementation1.Fragments
 
 import android.Manifest
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -8,23 +9,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.PermissionChecker
-import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.example.implementation1.R
+import com.example.implementation1.Viewmodel.ViewModel
+import com.example.implementation1.data.Contact
 import com.example.implementation1.databinding.ContactCallerFragementBinding
 
-private const val NAME = "name"
-private const val PHONE = "phone"
-
-class ContactCallerFragment : DialogFragment() {
+class ContactCallerFragment() : Fragment() {
 
     private var _binding: ContactCallerFragementBinding? = null
     private val binding get() = _binding
     private lateinit var viewModel: ViewModel
-    var item_pos: Int? = null
+    private val args by navArgs<ContactCallerFragmentArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NO_TITLE, android.R.style.Theme_DeviceDefault_Dialog_MinWidth)
     }
 
     override fun onCreateView(
@@ -33,20 +35,18 @@ class ContactCallerFragment : DialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         _binding = ContactCallerFragementBinding.inflate(inflater, container, false)
+
         return binding?.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val name = arguments?.getString(NAME)
-        val phone = arguments?.getString(PHONE)
-
-        binding?.contactCallerFragmentTvName!!.text = name
-        binding?.contactCallerFragmentTvPhone!!.text = phone
-
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
-
+        var id = args.currentUser.id
+        binding?.contactCallerFragmentTvName!!.setText(args.currentUser.fullName)
+        binding?.contactCallerFragmentTvPhone!!.setText(args.currentUser.contactNumber)
+        binding?.contactCallerFragmentTvEmail!!.setText(args.currentUser.email)
         binding?.contactCallerFragmentIvCall?.setOnClickListener(
             View.OnClickListener {
                 if (PermissionChecker.checkSelfPermission(requireContext(), Manifest.permission.CALL_PHONE) != PermissionChecker.PERMISSION_GRANTED) {
@@ -56,8 +56,30 @@ class ContactCallerFragment : DialogFragment() {
                 }
             }
         )
+        binding!!.contactCallerFragmentIvEdit.setOnClickListener {
+            val details = getContact()
+            val action = ContactCallerFragmentDirections.actionContactCallerFragmentToEditContactFragment(details)
+            findNavController().navigate(action)
+        }
+        binding!!.contactCallerFragmentIvDelete.setOnClickListener {
+
+            AlertDialog.Builder(requireContext()).also {
+                it.setTitle("Do you want to delete this contact?")
+                it.setPositiveButton("Yes") { dialog, which ->
+                    viewModel.deleteContact(args.currentUser)
+                    findNavController().navigate(R.id.action_contactCallerFragment_to_contactList)
+                }
+            }.create().show()
+        }
+        binding!!.contactCallerFragmentIvShare.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type
+        }
     }
 
+    private fun getContact(): Contact {
+        return Contact(args.currentUser.id, args.currentUser.contactImage, args.currentUser.fullName, args.currentUser.contactNumber, args.currentUser.email)
+    }
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -73,15 +95,6 @@ class ContactCallerFragment : DialogFragment() {
                 }
             }
         }
-    }
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            ContactCallerFragment().apply {
-                arguments = Bundle().apply {
-                    putString(NAME, param1)
-                    putString(PHONE, param2)
-                }
-            }
     }
 
     private fun makeCall() {

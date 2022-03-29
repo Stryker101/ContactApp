@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Week6Task">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".Fragments.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="7dp"
+    android:orientation="vertical"
+    tools:context=".Fragments.AddContactFragment">
+    <TextView
+        android:id="@+id/editContact_fragment_Header"
+        style="@style/myTxtStyle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/botton_border5"
+        android:layout_margin="10dp"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="252dp"
+        android:layout_marginBottom="19dp"
+        android:padding="10dp"
+        android:text="@string/edit_contact"
+        app:layout_constraintBottom_toTopOf="@+id/newContact_fragment_NameContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <RelativeLayout
+        android:id="@+id/editContact_image_layout"
+        android:background="@drawable/botton_border3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/editcontact_item_cardView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/editContact_fragment_ivContactImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_baseline_person"
+                    tools:ignore="ImageContrastCheck" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/botton_border3">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editContact_fragment_NameContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editContact_fragment_tvName"
+                android:layout_width="match_parent"
+                style="@style/myTxtStyle2"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:background="@drawable/botton_border" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editContact_fragment_PhoneContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editContact_fragment_NameContainer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editContact_fragment_tvPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/myTxtStyle2"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:background="@drawable/botton_border" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/editContact_fragment_EmailContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/white"
+            android:layout_margin="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editContact_fragment_PhoneContainer">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editContact_fragment_tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/myTxtStyle2"
+                android:padding="10dp"
+                android:inputType="phone"
+                android:background="@drawable/botton_border" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/editContact_fragment_UpdateBtn"
+            style="@style/loginButton"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:layout_marginStart="135dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="239dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/botton_border5"
+            android:padding="10dp"
+            android:text="@string/save_contact"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/editContact_fragment_EmailContainer" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

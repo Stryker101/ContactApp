@@ -1,4 +1,4 @@
-package com.example.implementation1.ui
+package com.example.implementation1.Viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -40,11 +40,16 @@ class ViewModel : ViewModel() {
         }
 
         override fun onChildChanged(snapshot: DataSnapshot, previousChildName: String?) {
-            TODO("Not yet implemented")
+            val contact = snapshot.getValue(Contact::class.java)
+            contact?.id = snapshot.key
+            _contact.value = contact!!
         }
 
         override fun onChildRemoved(snapshot: DataSnapshot) {
-            TODO("Not yet implemented")
+            val contact = snapshot.getValue(Contact::class.java)
+            contact?.id = snapshot.key
+            contact?.isDeleted = true
+            _contact.value = contact!!
         }
 
         override fun onChildMoved(snapshot: DataSnapshot, previousChildName: String?) {
@@ -60,6 +65,26 @@ class ViewModel : ViewModel() {
         dbcontacts.addChildEventListener(childEventListener)
     }
 
+    fun updateContact(contact: Contact) {
+        dbcontacts.child(contact.id!!).setValue(contact)
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    _result.value = null
+                } else {
+                    _result.value = it.exception
+                }
+            }
+    }
+
+    fun deleteContact(contact: Contact) {
+        dbcontacts.child(contact.id!!).setValue(null).addOnCompleteListener {
+            if (it.isSuccessful) {
+                _result.value = null
+            } else {
+                _result.value = it.exception
+            }
+        }
+    }
     override fun onCleared() {
         super.onCleared()
         dbcontacts.removeEventListener(childEventListener)
