@@ -16,12 +16,7 @@ import com.example.implementation1.Viewmodel.ViewModel
 import com.example.implementation1.data.Contact
 import com.example.implementation1.databinding.FragmentAddContactBinding
 
-//private const val ARG_PARAM1 = "param1"
-//private const val ARG_PARAM2 = "param2"
-
 class AddContactFragment : Fragment() {
-//    private var param1: String? = null
-//    private var param2: String? = null
 
     private var _binding: FragmentAddContactBinding? = null
     private val binding get() = _binding
@@ -54,7 +49,12 @@ class AddContactFragment : Fragment() {
                 Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
             }
         )
-
+        /** OnClick listerner for the add Contacts feature, this code block runs as long as the name and number
+         * inputs are not empty.
+         * If they arent emtpy, the inputs are saved in an instantiated object of the contact class,
+         * and the addContact function is called from the viewModel to add the new object of the contact class
+         * to the database, after which the fragment navigates back to the contact list.
+         */
         binding!!.newContactFragmentAddBtn.setOnClickListener {
             val fullName = binding!!.newContactFragmentTvName.text.toString().trim()
             val contactNumber = binding!!.newContactFragmentTvPhone.text.toString().trim()
@@ -78,15 +78,4 @@ class AddContactFragment : Fragment() {
             findNavController().navigate(R.id.action_addContactFragment_to_contactList)
         }
     }
-
-//    companion object {
-//        @JvmStatic
-//        fun newInstance(param1: String, param2: String) =
-//            AddContactFragment().apply {
-//                arguments = Bundle().apply {
-//                    putString(ARG_PARAM1, param1)
-//                    putString(ARG_PARAM2, param2)
-//                }
-//            }
-//    }
 }

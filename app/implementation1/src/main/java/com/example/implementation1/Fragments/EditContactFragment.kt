@@ -38,14 +38,24 @@ class EditContactFragment() : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        /**
+         * recieves the arguments passed from the contactCallerFragment in a bundle and
+         * sets this fragements arguments to the bundle
+         */
         val bundle = arguments ?: return
         val args = EditContactFragmentArgs.fromBundle(bundle)
 
         binding?.editContactFragmentTvName?.setText(args.currentUser.fullName)
         binding?.editContactFragmentTvPhone?.setText(args.currentUser.contactNumber)
         binding?.editContactFragmentTvEmail?.setText(args.currentUser.email)
-//        binding?.editContactFragmentIvContactImage.setIM
 
+        /**
+         * onClickListener for the UpdateContact btn that sets the values of contact object to be edited as
+         * the edited text from the edit contact fragment, and calls the updateContact function
+         * on the edited contact object.
+         * after which it navigates back to the contact list
+         */
         binding!!.editContactFragmentUpdateBtn.setOnClickListener {
             val fullName = binding!!.editContactFragmentTvName.text.toString()
             val contactNumber = binding!!.editContactFragmentTvPhone.text.toString()

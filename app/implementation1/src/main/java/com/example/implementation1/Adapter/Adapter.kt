@@ -4,9 +4,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.implementation1.Fragments.ContactListFragmentDirections
 import com.example.implementation1.data.Contact
 import com.example.implementation1.databinding.ContactItemLayoutBinding
-import com.example.implementation1.Fragments.ContactListFragmentDirections
 
 class Adapter() : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
@@ -20,6 +20,12 @@ class Adapter() : RecyclerView.Adapter<Adapter.ViewHolder>() {
 
         holder.binding.contactItemTvName.text = contacts[position].fullName
         holder.binding.contactItemTvPhoneNumber.text = contacts[position].contactNumber
+        /**
+         * onClicklisterner for each item on the recyclerview that takes the details of the clicked item as a object
+         * of contact class and passes the object through the navigation
+         * controller action function that will pass the contact to its destination.
+         * and then finally, navigates to the intended destination
+         */
         holder.binding.contactItemLayout.setOnClickListener {
             val action = ContactListFragmentDirections.actionContactListToContactCallerFragment(contacts[position])
             holder.itemView.findNavController().navigate(action)
@@ -29,7 +35,9 @@ class Adapter() : RecyclerView.Adapter<Adapter.ViewHolder>() {
     override fun getItemCount(): Int {
         return contacts.size
     }
-
+    /**
+     * addContact function that adds new contacts to the arrayList of contacts to be displayed in the recyclerView
+     */
     fun addContact(contact: Contact) {
         if (!contacts.contains(contact)) {
             contacts.add(contact)

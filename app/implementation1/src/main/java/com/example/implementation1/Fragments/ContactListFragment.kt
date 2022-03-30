@@ -32,6 +32,9 @@ class ContactListFragment : Fragment() {
         _binding = FragmentContactListBinding.inflate(inflater, container, false)
         binding.contactListFragmentRecyclerView.adapter = adapter
 
+        /**
+         * onClickListener for the add contact btn that navigates to the addContact Fragment
+         */
         binding.contactListFragmentAddBtn.setOnClickListener {
             findNavController().navigate(R.id.action_contactList_to_addContactFragment)
         }
@@ -52,9 +55,4 @@ class ContactListFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
-
-//    override fun onItemClick(position: Int, name: String, number: String) {
-//        findNavController().navigate(R.id.action_contactList_to_contactCallerFragment)
-////        ContactCallerFragment.newInstance(name, number).show(childFragmentManager, "")
-//    }
 }
