@@ -114,7 +114,6 @@
                 android:layout_height="wrap_content"
                 style="@style/myTxtStyle2"
                 android:padding="10dp"
-                android:inputType="phone"
                 android:background="@drawable/botton_border" />
         </com.google.android.material.textfield.TextInputLayout>
 

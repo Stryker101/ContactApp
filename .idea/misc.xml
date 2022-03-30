@@ -24,7 +24,7 @@
         <entry key="app/implementation1/src/main/res/layout/contact_caller_fragement.xml" value="0.25" />
         <entry key="app/implementation1/src/main/res/layout/contact_item_layout.xml" value="0.3098958333333333" />
         <entry key="app/implementation1/src/main/res/layout/fragment_add.xml" value="0.24010416666666667" />
-        <entry key="app/implementation1/src/main/res/layout/fragment_add_contact.xml" value="0.24010416666666667" />
+        <entry key="app/implementation1/src/main/res/layout/fragment_add_contact.xml" value="0.1" />
         <entry key="app/implementation1/src/main/res/layout/fragment_blank.xml" value="0.1" />
         <entry key="app/implementation1/src/main/res/layout/fragment_contact_card.xml" value="0.2953125" />
         <entry key="app/implementation1/src/main/res/layout/fragment_contact_list.xml" value="0.33" />

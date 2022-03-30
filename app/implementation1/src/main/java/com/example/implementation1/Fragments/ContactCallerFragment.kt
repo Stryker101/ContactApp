@@ -75,6 +75,18 @@ class ContactCallerFragment() : Fragment() {
             val intent = Intent(Intent.ACTION_SEND)
             intent.type
         }
+        binding!!.contactCallerFragmentIvShare.setOnClickListener {
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_TEXT, "")
+            intent.type = "text/plaint"
+            startActivity(Intent.createChooser(intent, "Share to: "))
+
+        }
+        binding!!.contactCallerFragmentIvBack.setOnClickListener {
+            fragmentManager?.popBackStack()
+            findNavController().navigate(R.id.action_contactCallerFragment_to_contactList)
+        }
     }
 
     private fun getContact(): Contact {
