@@ -24,10 +24,10 @@ class ViewModel : ViewModel() {
     val contact: LiveData<Contact> get() = _contact
 
     /**
-     *addContact function to add new contacts tothe database.
+     *addContact function to add new contacts to the database.
      * the contacts id, is generated automatically but not added to the database,
      * its only used as a key that can be used identify each contacts.
-     * The addOnComplete listener listens for the succesfull completetion of the add function everytime it is called
+     * The addOnComplete listener listens for the successful completion of the add function everytime it is called
      */
     fun addContact(contact: Contact) {
         contact.id = dbcontacts.push().key

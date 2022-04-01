@@ -46,7 +46,7 @@ class ContactCallerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         /**
-         * Each view in the ContactCallerFragment is bounded to its corresponding
+         * Each view in the ContactCallerFragment is bound to its corresponding
          * text in the arguments that was passed to the fragment
          */
         viewModel = ViewModelProvider(this)[ViewModel::class.java]
@@ -101,11 +101,10 @@ class ContactCallerFragment : Fragment() {
          * sharing.
          */
         binding!!.contactCallerFragmentIvShare.setOnClickListener {
-            val intent = Intent()
-            intent.action = Intent.ACTION_SEND
-            intent.putExtra(Intent.EXTRA_TEXT, "")
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.putExtra(Intent.EXTRA_TEXT, "Share Contact")
             intent.type = "text/plaint"
-            startActivity(Intent.createChooser(intent, "Share to: "))
+            startActivity(Intent.createChooser(intent, "Share Via: "))
         }
 
         /**
